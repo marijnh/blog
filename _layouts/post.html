@@ -1,0 +1,24 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8"/>
+  <title><?t $arg.title?></title>
+  <link rel=stylesheet href="res/style.css">
+</head>
+
+<?header?>
+
+<div id=main>
+  <h2><a href="<?t $arg.url?>"><?t $arg.title?></a></h2>
+  <div>
+    <span class=date><?t dateFormat($arg.date, "fullDate")?></span>
+    <?for tag $arg.tags?>
+       <a class=tag href="/#<?t tag?>"><?t tag?></a>
+    <?for.?>
+  </div>
+
+  <?h $arg.content?>
+</div>
+
+<div id=side>
+  side stuff;
+</div>

@@ -1,0 +1,38 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Marijn's feed</title>
+  <link rel=stylesheet href="res/style.css">
+  <script src="res/filtertag.js"></script>
+</head>
+
+<?header?>
+
+<div id=main>
+  <?h $arg.content?>
+
+  <div id=postlist>
+    <?for post site.posts?>
+      <div class=post data-tags="<?for tag post.tags?><?t tag?>,<?for.?>">
+        <h2><a href="<?t post.url?>"><?t post.title?></a></h2>
+        <div>
+          <span class=date><?t dateFormat(post.date, "fullDate")?></span>
+          <?for tag post.tags?>
+            <span class=tag onclick='filterTag("<?t tag?>")'><?t tag?></span>
+          <?for.?>
+        </div>
+      </div>
+    <?for.?>
+  </div>
+</div>
+
+<div id=side>
+  <p>Tags:</p>
+  <ul class=taglist>
+    <?do var tags = []; Object.keys(site.tags).forEach(function(k) {tags.push({name: k, posts: site.tags[k]});});
+         tags.sort(function(a, b) { return b.posts.length - a.posts.length; }); ?>
+    <?for tag tags?>
+      <li><span class=tag onclick='filterTag("<?t tag.name?>")'><?t tag.name?></span> (<?t tag.posts.length?>)</li>
+    <?for.?>
+  </ul>
+</div>
