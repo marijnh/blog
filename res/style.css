@@ -1,0 +1,71 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+html { margin: 0; padding: 0; background-color: #f4f5ef; color: #001611; }
+body {
+  margin: auto;
+  padding: 20px 0;
+  max-width: 800px;
+  font-family: 'Open Sans Condensed', serif;
+  position: relative;
+}
+
+h1, h2 { font-weight: normal; margin: 0; }
+#title h1 {
+  font-size: 25px;
+}
+#title > div {
+  padding: 3px 20px 6px;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+#title:before, #title:after {
+  display: block;
+  height: 3px;
+  background: url(border.png);
+  content: " ";
+}
+
+#face {
+  position: fixed;
+  bottom: 0; right: 0;
+  width: 250px; height: 300px;
+  background-image: url(face.png);
+}
+
+#main {
+  width: 75%;
+  float: left;
+  padding: 10px 20px 40px;
+}
+
+#side {
+  text-align: right;
+  margin-left: 80%;
+  padding: 10px 20px 40px 0;
+}
+
+a {
+  color: #521;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.post { margin: 15px 0; }
+h2 { font-size: 130%; }
+.date { color: #606868; font-size: 80%; }
+
+.tag { cursor: pointer; color: #326; font-size: 80%; background: #eef; padding: 0 2px; border-radius: 4px; }
+.tag:hover { background: #ddf; }
+.tag.selected { background: #cff; color: #166; }
+.tag.selected:hover { background: #aff; }
+
+.taglist, .taglist li {
+  padding: 0; margin: 0;
+  list-style: none;
+}
+
+pre {
+  margin-left: 20px;
+}
