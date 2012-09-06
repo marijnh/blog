@@ -1,6 +1,6 @@
 ---
 layout: index
-title: Marijn's feed
+title: Flows of energy
 ---
 
 This is a miscellaneous collection of writings and announcements,

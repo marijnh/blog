@@ -1,28 +1,31 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300);
 
-html { margin: 0; padding: 0; background-color: #f4f5ef; color: #001611; }
+html { margin: 0; padding: 0; background-color: #f5f8f1; }
 body {
+  overflow-y: scroll;
   margin: auto;
   padding: 20px 0;
   max-width: 800px;
-  font-family: 'Open Sans Condensed', serif;
   position: relative;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #050505;
 }
 
-h1, h2 { font-weight: normal; margin: 0; }
-#title h1 {
-  font-size: 25px;
-}
+h1, h2 { font-weight: normal; margin: 0; font-family: 'Times New Roman'; }
+h1 { font-size: 160%; }
+h2 { font-size: 130%; }
+
 #title > div {
-  padding: 3px 20px 6px;
+  padding: 3px 25px 7px;
   background-position: right bottom;
   background-repeat: no-repeat;
 }
-#title:before, #title:after {
-  display: block;
+#title .line {
+  padding: 0;
   height: 3px;
   background: url(border.png);
-  content: " ";
 }
 
 #face {
@@ -35,17 +38,21 @@ h1, h2 { font-weight: normal; margin: 0; }
 #main {
   width: 75%;
   float: left;
-  padding: 10px 20px 40px;
+  padding: 10px 25px 70px;
+}
+
+#full {
+  padding: 10px 25px 70px;
 }
 
 #side {
   text-align: right;
   margin-left: 80%;
-  padding: 10px 20px 40px 0;
+  padding: 10px 25px 70px 0;
 }
 
 a {
-  color: #521;
+  color: #441f07;
   text-decoration: none;
 }
 a:hover {
@@ -53,7 +60,6 @@ a:hover {
 }
 
 .post { margin: 15px 0; }
-h2 { font-size: 130%; }
 .date { color: #606868; font-size: 80%; }
 
 .tag { cursor: pointer; color: #326; font-size: 80%; background: #eef; padding: 0 2px; border-radius: 4px; }
