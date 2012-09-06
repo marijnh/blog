@@ -12,11 +12,11 @@
         href="http://marijn.haverbeke.nl/blog/feed.atom"/>
 
   <?for post site.posts.slice(0, 40)?>
+    <?do var url = /^\w+:/.test(post.url) ? post.url : "http://marijnhaverbeke.nl/blog/" + post.url; ?>
     <entry>
       <title><?t post.title?></title>
-      <link rel="alternate" type="text/html"
-            href="http://marijnhaverbeke.nl/blog/[?t post.url?]"/>
-      <id>http://marijn.haverbeke.nl/blog/<?t post.url?></id>
+      <link rel="alternate" type="text/html" href="[?t url?]"/>
+      <id><?t url?></id>
       <updated><?t dateFormat(post.date, "yyyy-mm-dd'T'HH:MM:ssZ")?></updated>
       <?for tag post.tags?><category term="[?t tag?]"/><?for.?>
       <content type="xhtml" xml:lang="en">
