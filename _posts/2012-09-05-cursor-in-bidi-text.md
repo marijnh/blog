@@ -5,6 +5,7 @@ tags:
 - javascript
 - codemirror
 - unicode
+- cm-internals
 ---
 
 *"Unicode is hard"* is a commonplace among developers. And I guess it
@@ -93,7 +94,7 @@ RTL and LTR marks, which explicitly control the direction of the text.
 CodeMirror's [implementation][cmbidi] does not currently implement
 this part of the algorithm.
 
-[cmbidi]: https://github.com/marijnh/CodeMirror/blob/54c8517baf789793c64ea4306168f92cf3e6cb70/lib/codemirror.js#L3498
+[cmbidi]: https://github.com/marijnh/CodeMirror/blob/67365d2646551a0dcf9a18e2d1998686907233cd/lib/codemirror.js#L3447
 
 ## Quantum cursors
 

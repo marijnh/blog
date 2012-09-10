@@ -73,6 +73,7 @@ a:hover {
 pre {
   padding-left: 5px;
   border-left: 3px solid #ddd;
+  line-height: 1.4;
 }
 
 .undertitle {
