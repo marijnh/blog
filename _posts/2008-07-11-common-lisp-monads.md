@@ -61,10 +61,13 @@ So what would monads look like in CL. Well, if we want to
 define polymorphic monadic operations, bind should probably be a
 generic function. I'll use Haskell's operators for the names:
 
-    (defgeneric >>= (m f))
-    (defgeneric >> (m1 m2)
-      (:method (m1 m2)
+
+```commonlisp
+(defgeneric >>= (m f))
+(defgeneric >> (m1 m2)
+  (:method (m1 m2)
     (>>= m1 (lambda (x) (declare (ignore x)) m2))))
+```
 
 Awesome! But what about return? I merrily started typing
 `(defgeneric mreturn (val))`... oh hold on. There's
@@ -76,8 +79,9 @@ workarounds come to mind.) Oh well, I'll just give the different
 returns different names. Anyway, here's a neat implementation of
 Haskell's `do`:
 
-    (defmacro seq (&rest ops)
-      (labels ((transform (ops)
+```commonlisp
+(defmacro seq (&rest ops)
+  (labels ((transform (ops)
              (cond ((and (consp (car ops)) (eq (caar ops) '<-))
                     `(>>= ,(caddar ops) (lambda (,(cadar ops))
                                           ,(transform (cdr ops)))))
@@ -85,14 +89,15 @@ Haskell's `do`:
                    ((null (cdr ops)) (car ops))
                    (t `(>> ,(car ops) ,(transform (cdr ops)))))))
     (transform ops)))
-    
-    (macroexpand-1 '(seq (<- x monadic-read)
-                     (monadic-write "You said: ")
-                     (monadic-write x)))
-    
-    ;; => (>>= monadic-read (lambda (x)
-    ;;                        (>> (monadic-write "You said: ")
-    ;;                            (monadic-write x))))
+
+(macroexpand-1 '(seq (<- x monadic-read)
+                 (monadic-write "You said: ")
+                 (monadic-write x)))
+
+;; => (>>= monadic-read (lambda (x)
+;;                        (>> (monadic-write "You said: ")
+;;                            (monadic-write x))))
+```
 
 This restored my enthousiasm a little — I could emulate
 `do`-notation, and it wasn't even complicated!
@@ -101,24 +106,26 @@ An easy, rather trivial example would be the maybe monad, which
 skips further computation as soon as any computation returns
 `nil`:
 
-    (defstruct maybe val)
-    (defun maybe (val)
-      (make-maybe :val val))
-    (defmethod >>= ((m maybe) f)
-      (if (maybe-val m)
+```commonlisp
+(defstruct maybe val)
+(defun maybe (val)
+  (make-maybe :val val))
+(defmethod >>= ((m maybe) f)
+  (if (maybe-val m)
       (funcall f (maybe-val m))
       m))
-    (defun liftmaybe (f)
-      (lambda (m) (maybe (funcall f m))))
-    
-    ;; Parse a string as a number, divide it cleanly by 10, and add 1 to
-    ;; the resulting number. Return nil if any of this fails.
-    (defun string/10+1 (str)
-      (maybe-val
-       (seq (<- num (maybe (parse-integer str :junk-allowed t)))
-        (<- tenth (multiple-value-bind (quot rem) (floor num 10)
-                    (maybe (and (zerop rem) quot))))
-        (funcall (liftmaybe '1+) tenth))))
+(defun liftmaybe (f)
+  (lambda (m) (maybe (funcall f m))))
+
+;; Parse a string as a number, divide it cleanly by 10, and add 1 to
+;; the resulting number. Return nil if any of this fails.
+(defun string/10+1 (str)
+  (maybe-val
+   (seq (<- num (maybe (parse-integer str :junk-allowed t)))
+    (<- tenth (multiple-value-bind (quot rem) (floor num 10)
+                (maybe (and (zerop rem) quot))))
+    (funcall (liftmaybe '1+) tenth))))
+```
 
 That's a little too blatantly useless to be interesting though.
 But note how ugly CL's multiple namespaces make
@@ -133,57 +140,63 @@ though a state monad value contained a state. It does
 *not*. I wrap these functions in a struct to be able to
 dispatch the bind function on them.
 
-    (defstruct state-m compute)
-    (defun state-m (compute)
-      (make-state-m :compute compute))
-    
-    (defun run-state (state state-m)
-      (funcall (state-m-compute state-m) state))
-    (defun return-state (val)
-      (state-m (lambda (state) (values state val))))
-    
-    (defmethod >>= ((a state-m) f)
-      (state-m (lambda (state)
-         (multiple-value-bind (state2 val) (funcall (state-m-compute a) state)
-           (funcall (state-m-compute (funcall f val)) state2)))))
-    
-    (defparameter get-state
-      (state-m (lambda (state) (values state state))))
-    (defun set-state (state)
-      (state-m (lambda (old-state) (declare (ignore old-state)) (values state nil))))
+```commonlisp
+(defstruct state-m compute)
+(defun state-m (compute)
+  (make-state-m :compute compute))
+
+(defun run-state (state state-m)
+  (funcall (state-m-compute state-m) state))
+(defun return-state (val)
+  (state-m (lambda (state) (values state val))))
+
+(defmethod >>= ((a state-m) f)
+  (state-m (lambda (state)
+     (multiple-value-bind (state2 val) (funcall (state-m-compute a) state)
+       (funcall (state-m-compute (funcall f val)) state2)))))
+
+(defparameter get-state
+  (state-m (lambda (state) (values state state))))
+(defun set-state (state)
+  (state-m (lambda (old-state) (declare (ignore old-state)) (values state nil))))
+```
 
 These, then, can be used to implement a function that maps over
 a tree and counts the elements at the same time:
 
-    (defun map-count (tree f)
-      (labels ((iter (val)
-             (cond ((consp val)
-                    (seq (<- car (iter (car val)))
-                         (<- cdr (iter (cdr val)))
-                         (return-state (cons car cdr))))
-                   ((null val)
-                    (return-state nil))
-                   (t
-                    (seq (<- count get-state)
-                         (set-state (1+ count))
-                         (return-state (funcall f val)))))))
-    (run-state 0 (iter tree))))
-    
-    (map-count '(1 2 (4 5 (6)) ((87 9))) (lambda (n) (+ n 4)))
-    ;; => 7
-    ;;    (5 6 (8 9 (10)) ((91 13)))
-    ;; Woo-hoo!
+```commonlisp
+(defun map-count (tree f)
+  (labels ((iter (val)
+         (cond ((consp val)
+                (seq (<- car (iter (car val)))
+                     (<- cdr (iter (cdr val)))
+                     (return-state (cons car cdr))))
+               ((null val)
+                (return-state nil))
+               (t
+                (seq (<- count get-state)
+                     (set-state (1+ count))
+                     (return-state (funcall f val)))))))
+(run-state 0 (iter tree))))
+
+(map-count '(1 2 (4 5 (6)) ((87 9))) (lambda (n) (+ n 4)))
+;; => 7
+;;    (5 6 (8 9 (10)) ((91 13)))
+;; Woo-hoo!
+```
 
 Which does roughly the equivalent of...
 
-    (defun map-count-2 (tree f)
-      (let ((count 0))
+```commonlisp
+(defun map-count-2 (tree f)
+  (let ((count 0))
     (labels ((iter (val)
                (if (consp val)
                    (mapcar #'iter val)
                    (progn (incf count)
                           (funcall f val)))))
       (values (iter tree) count))))
+```
 
 It appears that in the presence of mutable state, a lot of the
 advantages of monads become moot. Furthermore, in the presence of
