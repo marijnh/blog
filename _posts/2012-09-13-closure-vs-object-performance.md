@@ -68,7 +68,7 @@ still, nothing more than a simple following of pointers is involved.
 Compare that to accessing an object field. This has been the target of
 much optimization work, since it used to be one of JavaScript's main
 bottlenecks, but it still requires a baseline amount of work. Assuming
-the JavaScript engine implements [polymorphic inline caching], which
+the JavaScript engine implements [polymorphic inline caching][pic], which
 all relevant ones do at this point, you'll still have to:
 
 [pic]: http://blog.cdleary.com/2010/09/picing-on-javascript-for-fun-and-profit/
