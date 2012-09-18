@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Behaving like a text input in browser JavaScript
+title: Faking an editable control in browser JavaScript
 tags:
 - javascript
 - codemirror
