@@ -9,7 +9,7 @@ tags:
 
 This post is part of an ongoing series of articles that aim to
 document the internals of the [CodeMirror][cm] code editor. I will use
-the [`cm-internals`][tag] tag to distinguish these posts—if you intend to
+the [*cm-internals*][tag] tag to distinguish these posts—if you intend to
 hack on CodeMirror, it might be worthwhile to see what else is there.
 
 [cm]: http://codemirror.net
