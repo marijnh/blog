@@ -44,6 +44,7 @@ major problems ([issue list for v3 milestone][issues]), but contains a
 lot of new code, and a serious overhaul of the old code, so I would
 not recommend using it in production yet.
 
+[pledgie]: http://pledgie.com/campaigns/17784
 [issues]: https://github.com/marijnh/CodeMirror/issues?milestone=2&state=open
 
 I *would* be very thankful for any testing, of the editor in general
