@@ -1,10 +1,11 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:300);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:300);
 
 html {
   margin: 0;
   padding: 0;
+  background: #f5f8f1;
 }
-@media screen and (min-device-width: 1500px) {
+@media screen and (min-width: 1300px) {
   html {
     background: url(face.png) right bottom fixed #f5f8f1 no-repeat;
   }
@@ -21,6 +22,7 @@ body {
   line-height: 1.6;
   color: #050505;
 }
+p { margin: 1.6em 0; }
 
 h1, h2 { font-weight: normal; margin: 0; font-family: 'Times New Roman'; }
 h1 { font-size: 160%; }
@@ -74,9 +76,11 @@ a:hover {
   list-style: none;
 }
 
+pre, code {
+  font-family: "Ubuntu Mono", monospace;
+}
+
 pre {
-  padding-left: 5px;
-  border-left: 3px solid #ddd;
   line-height: 1.4;
 }
 
@@ -84,13 +88,27 @@ pre {
   margin-top: -5px;
 }
 
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+}
+ul li:before {
+  content: "✼";
+  display: inline-block;
+  width: 1.5em;
+  margin-left: -1.5em;
+  font-size: 80%;
+  vertical-align: 5%;
+}
+
 /* CodeMirror styling */
 
-.cm-keyword {color: #708;}
+.cm-keyword {color: #607;}
 .cm-atom {color: #219;}
 .cm-number {color: #164;}
 .cm-def {color: #00f;}
-.cm-variable-2 {color: #05a;}
+.cm-variable-2 {color: #048;}
 .cm-variable-3 {color: #085;}
 .cm-comment {color: #840;}
 .cm-string {color: #a11;}
