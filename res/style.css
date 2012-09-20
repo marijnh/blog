@@ -22,7 +22,6 @@ body {
   line-height: 1.6;
   color: #050505;
 }
-p { margin: 1.6em 0; }
 
 h1, h2 { font-weight: normal; margin: 0; font-family: 'Times New Roman'; }
 h1 { font-size: 160%; }
@@ -83,6 +82,9 @@ pre, code {
 
 pre {
   line-height: 1.4;
+  border-left: 4px dotted #d6d7d5;
+  margin-left: -18px;
+  padding-left: 14px;
 }
 
 .undertitle {
