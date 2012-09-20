@@ -93,6 +93,14 @@ amount of `textarea.value` traffic it produces, for example by not
 updating the value during a selection drag, but only when the drag is
 finished.
 
+*Update*: It turned out to be easy to wire up CodeMirror to perform
+the same trick as ACE—only putting in the whole selection when a cut
+or copy happens—but only do it when the selection is actually big, and
+we're on a browser that fires `copy` and `cut` events. For small
+selections, the X Windows menu will still work, yet the pathological
+case of select-all in a huge doc is only costly when the resulting
+selection is copied.
+
 ## Noticing input
 
 So the hidden textarea contains the current selection, and has its
