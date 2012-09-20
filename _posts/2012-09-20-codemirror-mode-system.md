@@ -177,7 +177,7 @@ That means that, if you open a huge document and never scroll down, no
 state is accumulated for the whole document. It also means that most
 background parsing runs are short, since there'll be no more than a
 few hundred lines between the part of the document that you're
-currently editing and the bottom of the visible viewport.
+currently editing and the bottom of the visible view port.
 
 ## Power
 
@@ -220,7 +220,7 @@ modes, driven by a browserless node.js version of `runMode`.
 
 Another useful consequence of modular modes is that they are easy to
 *compose*. For example the [mixed HTML mode][htmlmixed] composes the
-JavaScript, CSS, and XML modes (the latters has a configuration option
+JavaScript, CSS, and XML modes (the latter has a configuration option
 that makes it handle HTML). Internally, it initializes all three
 modes, and when tokenizing, it multiplexes between them—feeding the
 current input to the sub-mode that is active, and switching to a
