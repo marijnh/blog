@@ -7,6 +7,13 @@ tags:
 - codemirror
 ---
 
+**Note:** the question asked in this post, "why aren't closures
+super-fast?", was thorougly answered by Vyacheslav Egorov in
+[his followup][aleph]. Reading that is probably more informative than
+reading the text below.
+
+[aleph]: http://mrale.ph/blog/2012/09/23/grokking-v8-closures-for-fun.html
+
 I originally structured [CodeMirror][cm] instances as one huge closure
 that contained all the internal variables. The constructor would
 create local variables for all internal state, and local functions for
