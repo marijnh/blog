@@ -123,6 +123,11 @@ which is more than 5, so we look inside that chunk. It is a leaf
 chunk, which means that its content is flat, and we can simply grab
 the line number five from inside of it.
 
+For an interactive visualization of this tree, see
+[this demo on the CodeMirror website][demo].
+
+[demo]: http://codemirror.net/3/demo/btree.html
+
 ## Updates
 
 The interface for deleting and inserting line objects in a tree is
