@@ -5,7 +5,7 @@
     <name>Marijn Haverbeke</name>
     <uri>http://marijnhaverbeke.nl/</uri>
   </author>
-  <updated><?t dateFormat(new Date, "yyyy-mm-dd'T'HH:MM:ssZ")?></updated>
+  <updated><?t dateFormat(new Date, "yyyy-mm-dd'T'HH:MM:ss")?>+01:00</updated>
   <id>http://marijnhaverbeke.nl/blog/feed.atom</id>
 
   <link rel="self" type="application/atom+xml"
@@ -17,7 +17,7 @@
       <title><?t post.title?></title>
       <link rel="alternate" type="text/html" href="[?t url?]"/>
       <id><?t url?></id>
-      <updated><?t dateFormat(post.date, "yyyy-mm-dd'T'HH:MM:ssZ")?></updated>
+      <updated><?t dateFormat(post.date, "yyyy-mm-dd'T'HH:MM:ss")?>+01:00</updated>
       <?for tag post.tags?><category term="[?t tag?]"/><?for.?>
       <content type="xhtml" xml:lang="en">
         <div xmlns="http://www.w3.org/1999/xhtml"><?h post.content?></div>
