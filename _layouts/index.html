@@ -12,16 +12,16 @@
 
   <div id=postlist>
     <?for post site.posts?>
-      <div class=post data-tags="<?for tag post.tags?><?t tag?>,<?for.?>">
+      <div class=post data-tags="<?for tag post.tags?><?t tag?>,<?/for?>">
         <h2><a href="<?t post.url?>"><?t post.title?></a></h2>
         <div class=undertitle>
           <span class=date><?t dateFormat(post.date, "fullDate")?></span>
           <?for tag post.tags?>
             <span class=tag onclick='filterTag("<?t tag?>")'><?t tag?></span>
-          <?for.?>
+          <?/for?>
         </div>
       </div>
-    <?for.?>
+    <?/for?>
   </div>
 </div>
 
@@ -32,6 +32,6 @@
          tags.sort(function(a, b) { return b.posts.length - a.posts.length; }); ?>
     <?for tag tags?>
       <li><span class=tag onclick='filterTag("<?t tag.name?>")'><?t tag.name?></span> (<?t tag.posts.length?>)</li>
-    <?for.?>
+    <?/for?>
   </ul>
 </div>

@@ -18,10 +18,10 @@
       <link rel="alternate" type="text/html" href="[?t url?]"/>
       <id><?t url?></id>
       <updated><?t dateFormat(post.date, "yyyy-mm-dd'T'HH:MM:ss")?>+01:00</updated>
-      <?for tag post.tags?><category term="[?t tag?]"/><?for.?>
+      <?for tag post.tags?><category term="[?t tag?]"/><?/for?>
       <content type="xhtml" xml:lang="en">
         <div xmlns="http://www.w3.org/1999/xhtml"><?h post.content?></div>
       </content>
     </entry>
-  <?for.?>
+  <?/for?>
 </feed>
