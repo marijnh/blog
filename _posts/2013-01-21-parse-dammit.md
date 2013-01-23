@@ -129,7 +129,7 @@ or less sane results for most inputs.
 ## Get the code
 
 This new parser is a submodule of my [Acorn][ac] parser, and lives in
-the [`parse_loose.js`][pl] file. If you've come up with a use for such
+the [`acorn_loose.js`][pl] file. If you've come up with a use for such
 a parser, or just want to see if you can break it, check out the git
 repository, and have fun. It runs both in Node and in the browser.
 It's not terribly mature or stable, but it does what it claims to do.
