@@ -4,6 +4,7 @@ title: Parsing line noise as JavaScript
 tags:
 - javascript
 - parsing
+- tern
 ---
 
 I am writing a tool that tries to enhance a JavaScript code editor by
