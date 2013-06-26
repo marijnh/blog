@@ -19,9 +19,9 @@
       <id><?t url?></id>
       <updated><?t dateFormat(post.date, "yyyy-mm-dd'T'HH:MM:ss")?>+01:00</updated>
       <?for tag post.tags?><category term="[?t tag?]"/><?/for?>
-      <content type="xhtml" xml:lang="en">
-        <div xmlns="http://www.w3.org/1999/xhtml"><?h post.content?></div>
-      </content>
+      <content type="html" xml:base="http://marijnhaverbeke.nl/blog/"><![CDATA[
+        <?h post.content ?>
+      ]]></content>
     </entry>
   <?/for?>
 </feed>
