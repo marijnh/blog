@@ -1,4 +1,16 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:300);
+@font-face {
+  font-family: 'Sorts Mill Goudy';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Sorts Mill Goudy Regular'), local('SortsMillGoudy-Regular'), url(http://themes.googleusercontent.com/static/fonts/sortsmillgoudy/v3/JzRrPKdwEnE8F1TDmDLMUkQF8YaxoHnTBii2CPCdpvk.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(http://themes.googleusercontent.com/static/fonts/ubuntumono/v3/ViZhet7Ak-LRXZMXzuAfkYbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
 
 html {
   margin: 0;
@@ -17,15 +29,16 @@ body {
   padding: 20px 0;
   max-width: 800px;
   position: relative;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Sorts Mill Goudy', serif;
+  font-size: 110%;
   font-weight: 300;
   line-height: 1.6;
   color: #050505;
 }
 
-h1, h2, h3 { font-weight: normal; margin: 0; font-family: 'Times New Roman'; }
-h1 { font-size: 160%; }
-h2 { font-size: 140%; }
+h1, h2, h3 { font-weight: normal; ddfont-family: "Times New Roman", serif; margin: 0; letter-spacing: .03em; }
+h1 { font-size: 150%; }
+h2 { font-size: 130%; }
 h3 { font-size: 120%; }
 
 #title > div {
