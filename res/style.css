@@ -94,6 +94,14 @@ pre, code {
   font-family: "Ubuntu Mono", monospace;
 }
 
+code {
+  color: #444;
+  background: #eaedd7;
+  border-radius: 3px;
+  padding: 0 3px;
+  font-size: 90%;
+}
+
 pre {
   line-height: 1.4;
   border-left: 4px dotted #d6d7d5;
