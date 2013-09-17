@@ -102,6 +102,13 @@ code {
   font-size: 90%;
 }
 
+pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 100%;
+}
+
 pre {
   line-height: 1.4;
   border-left: 4px dotted #d6d7d5;
