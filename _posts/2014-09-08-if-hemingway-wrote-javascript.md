@@ -101,9 +101,9 @@ function indivisibleFreaks(limit) {
   // Line them all up...
   offTheHook: for (var number = 2; number <= limit; number++) {
     // ...and drop the screwups with a .44 Magnum.
-    for (var aim = 0; aim < found.length; aim++)
-      if (aim % freaks[j]) continue offTheHook;
-    freaks.push(i);
+    for (var aim = 0; aim < freaks.length; aim++)
+      if (number % freaks[aim] == 0) continue offTheHook;
+    freaks.push(number);
   }
 
   // What you bastards want with these poor guys, I can only imagine.
