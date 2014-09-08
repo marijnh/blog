@@ -15,7 +15,7 @@ be completely pointless, and he wouldn't sell ten copies. After
 reading the result of his efforts, I still firmly stand by the latter
 prediction, but I have to admit that I actually enjoyed this book.
 
-_If Hemingway Wrote JavaScript_ is a slim, prettily typeset book that
+_[If Hemingway Wrote JavaScript](http://anguscroll.com/hemingway)_ is a slim, prettily typeset book that
 is divided into five programming exercises, and has five authors solve
 each of the exercises. It accompanies each solution with a brief
 description of the author's background and style, and a detailed
