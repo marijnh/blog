@@ -37,7 +37,7 @@ efficient updating.
 
 The [Atom editor](https://atom.io/) has simply
 [switched to React](http://blog.atom.io/2014/07/02/moving-atom-to-react.html)
-for their rendering code. CodeMirror takes a different approach.
+for their rendering code. (Later edit: they [are switching back](https://github.com/atom/atom/pull/5624).) CodeMirror takes a different approach.
 
 ## Operations
 
