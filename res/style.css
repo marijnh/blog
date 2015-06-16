@@ -96,7 +96,7 @@ pre, code {
 
 code {
   color: #444;
-  background: #eaedd7;
+  background: #f1f1df;
   border-radius: 3px;
   padding: 0 3px;
   font-size: 90%;
@@ -125,13 +125,19 @@ ul {
   margin-left: 0;
   padding: 0;
 }
+ul li { position: relative }
 ul li:before {
+  position: absolute;
   content: "✼";
-  display: inline-block;
+  display: block;
   width: 1.5em;
-  margin-left: -1.5em;
+  left: -1.5em;
+  top: .25em;
   font-size: 80%;
-  vertical-align: 5%;
+}
+
+ol {
+  padding-left: 0;
 }
 
 /* CodeMirror styling */
