@@ -60,7 +60,7 @@ screen readers and bidirectional text.
 Any actual modifications made to the document are captured by handling
 the appropriate browser events, and converted to our own
 representation of these modifications. Assuming relatively modern
-browses, this is easy for most types of changes. We can handle key
+browsers, this is easy for most types of changes. We can handle key
 events to capture typed text and things like backspace and enter. We
 can handle clipboard events to make copy, cut, and paste work. Drag
 and drop are also exposed through events. Even IME input fires
