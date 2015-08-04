@@ -358,6 +358,6 @@ A downside of this is that if a user has made a change but is now idle
 while other people are editing the document, the position maps needed
 to move this user's change to the current document version pile up
 without bound. To address this, the history periodically _compacts_
-itself, mapping the inverted changes forward to that they start at the
+itself, mapping the inverted changes forward so that they start at the
 current document again. It can then discard the intermediate position
 maps.
