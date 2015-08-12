@@ -62,7 +62,7 @@ starting out, is a way to get more money flowing into open source.
 There have been [several][openssl] [stories][gpg] in the news about
 underfunded, critical projects, but I think the problem affects most
 projects that aren't directly associated with a company: There are few
-direct incentives to pay for open source, so even projects with with
+direct incentives to pay for open source, so even projects with
 enormous amounts of users often simply don't see enough money to pay
 for proper maintenance. The slack is sometimes picked up by the
 aforementioned young people without responsibilities, but that is
