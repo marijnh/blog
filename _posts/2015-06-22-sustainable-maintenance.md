@@ -2,7 +2,8 @@
 layout: post
 title: More Money For Better Open-Source Software
 tags:
-
+- open source
+- community
 ---
 
 As a programmer I create artifacts that, unlike classical commodities
