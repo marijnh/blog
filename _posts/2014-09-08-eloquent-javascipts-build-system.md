@@ -4,6 +4,7 @@ title: "Eloquent JavaScript's Build System"
 tags:
 - javascript
 - books
+- tooling
 ---
 
 A text is not just a string of Unicode. It has structure, and a
