@@ -82,7 +82,7 @@ just to obscure, the [language][elisp] too slow, and the ecosystem too
 weird for me.
 
 [lexical]: http://www.emacswiki.org/emacs/DynamicBindingVsLexicalBinding
-[elisp]: http://www.gnu.org/software/emacs/emacs-lisp-intro/
+[elisp]: http://www.gnu.org/software/emacs/manual/html_node/eintr/index.html
 
 (A fair number of other parts will have to be put in place for
 CodeMirror to be viable as a day-to-day editor, but I'll talk about
