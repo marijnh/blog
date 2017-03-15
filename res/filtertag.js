@@ -1,7 +1,7 @@
 window.onload = window.onhashchange = filterList;
 
 function getTags() {
-  var tags = document.location.hash.slice(1).split(",");
+  var tags = decodeURIComponent(document.location.hash.slice(1)).split(",");
   if (!tags[0].length) tags.pop();
   return tags;
 }
@@ -26,5 +26,5 @@ function filterTag(tag) {
   var tags = getTags(), known = tags.indexOf(tag);
   if (known == -1) tags.push(tag);
   else tags.splice(known, 1);
-  document.location.hash = tags.length ? "#" + tags.join(",") : "";
+  document.location.hash = tags.length ? "#" + encodeURIComponent(tags.join(",")) : "";
 }
