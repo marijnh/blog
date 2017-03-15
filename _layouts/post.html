@@ -1,19 +1,17 @@
 <!doctype html>
 <head>
-  <?meta?>
-  <title><?t $arg.title?></title>
+  <<meta>>
+  <title><<t $in.title>></title>
 </head>
 
-<?header?>
+<<header>>
 
 <div id=full>
-  <h1><a href="<?t $arg.url?>"><?t $arg.title?></a></h1>
+  <h1><a href="<<t $in.url>>"><<t $in.title>></a></h1>
   <div class=undertitle>
-    <span class=date><?t dateFormat($arg.date, "fullDate")?></span>
-    <?for tag $arg.tags?>
-       <a class=tag href="./#<?t tag?>"><?t tag?></a>
-    <?/for?>
+    <span class=date><<t dateFormat($in.date, "fullDate")>></span>
+    <<for tag $in.tags>> <a class=tag href="./#<<t tag>>"><<t tag>></a><</for>>
   </div>
 
-  <?h $arg.content?>
+  <<h $in.content>>
 </div>

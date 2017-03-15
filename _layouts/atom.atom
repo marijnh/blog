@@ -5,23 +5,23 @@
     <name>Marijn Haverbeke</name>
     <uri>http://marijnhaverbeke.nl/</uri>
   </author>
-  <updated><?t dateFormat(new Date, "yyyy-mm-dd'T'HH:MM:ss")?>+01:00</updated>
+  <updated><<t dateFormat(new Date, "yyyy-mm-dd'T'HH:MM:ss")>>+01:00</updated>
   <id>http://marijnhaverbeke.nl/blog/feed.atom</id>
 
   <link rel="self" type="application/atom+xml"
         href="http://marijnhaverbeke.nl/blog/feed.atom"/>
 
-  <?for post site.posts.slice(0, 40)?>
-    <?do var url = /^\w+:/.test(post.url) ? post.url : "http://marijnhaverbeke.nl/blog/" + post.url; ?>
+  <<for post site.posts.slice(0, 40)>>
+    <<do var url = /^\w+:/.test(post.url) ? post.url : "http://marijnhaverbeke.nl/blog/" + post.url; >>
     <entry>
-      <title><?t post.title?></title>
+      <title><<t post.title>></title>
       <link rel="alternate" type="text/html" href="[?t url?]"/>
-      <id><?t url?></id>
-      <updated><?t dateFormat(post.date, "yyyy-mm-dd'T'HH:MM:ss")?>+01:00</updated>
-      <?for tag post.tags?><category term="[?t tag?]"/><?/for?>
+      <id><<t url>></id>
+      <updated><<t dateFormat(post.date, "yyyy-mm-dd'T'HH:MM:ss")>>+01:00</updated>
+      <<for tag post.tags>><category term="[?t tag?]"/><</for>>
       <content type="html" xml:base="http://marijnhaverbeke.nl/blog/"><![CDATA[
-        <?h post.content ?>
+        <<h post.content >>
       ]]></content>
     </entry>
-  <?/for?>
+  <</for>>
 </feed>
