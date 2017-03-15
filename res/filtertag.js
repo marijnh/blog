@@ -1,7 +1,7 @@
 window.onload = window.onhashchange = filterList;
 
 function getTags() {
-  var tags = document.location.hash.slice(1).split(",");
+  var tags = document.location.hash.slice(1).replace(/%20/g, " ").split(",");
   if (!tags[0].length) tags.pop();
   return tags;
 }
