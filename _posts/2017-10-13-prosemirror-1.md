@@ -9,7 +9,8 @@ tags:
 Two years ago, I started the [ProseMirror
 project](http://prosemirror.net) because I wanted to take a stab at [a
 better approach](prosemirror.html) to WYSIWYG-style editing. Today,
-I'm releasing version 1.0 of [the
+I'm releasing [version
+1.0](https://discuss.prosemirror.net/t/release-1-0-0/998) of [the
 library](https://github.com/prosemirror/). The architecture and scope
 of the project have changed quite a bit during its lifetime, but I
 feel that the original goal has been met.
