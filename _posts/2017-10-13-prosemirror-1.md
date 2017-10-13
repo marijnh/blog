@@ -88,8 +88,8 @@ extensions.
 ## Conclusion
 
 After years of wild experiments and constant change, starting with the
-the 1.0 we are aiming for stability. The central modules will stay on
-1.x for as long as possible, which means new releases won't require
+1.0 release we are aiming for stability. The central modules will stay
+on 1.x for as long as possible, which means new releases won't require
 you to change your code. There's an [RFC
 process](https://github.com/prosemirror/rfcs/) that we'll use to get
 community feedback on new features
