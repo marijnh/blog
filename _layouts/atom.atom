@@ -15,7 +15,7 @@
     <<do var url = /^\w+:/.test(post.url) ? post.url : "http://marijnhaverbeke.nl/blog/" + post.url; >>
     <entry>
       <title><<t post.title>></title>
-      <link rel="alternate" type="text/html" href="[?t url?]"/>
+      <link rel="alternate" type="text/html" href="<<t url>>"/>
       <id><<t url>></id>
       <updated><<t dateFormat(post.date, "yyyy-mm-dd'T'HH:MM:ss")>>+01:00</updated>
       <<for tag post.tags>><category term="[?t tag?]"/><</for>>
