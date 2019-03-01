@@ -15,12 +15,7 @@
 html {
   margin: 0;
   padding: 0;
-  background: #fafdf7;
-}
-@media screen and (min-width: 1300px) {
-  html {
-    background: url(face.png) right bottom fixed #fafdf7 no-repeat;
-  }
+  background: #fefefe;
 }
 
 body {
@@ -33,7 +28,7 @@ body {
   font-size: 110%;
   font-weight: 300;
   line-height: 1.4;
-  color: #050505;
+  color: #030303;
 }
 
 h1, h2, h3 { font-weight: normal; ddfont-family: "Times New Roman", serif; margin: 0; letter-spacing: .03em; }
