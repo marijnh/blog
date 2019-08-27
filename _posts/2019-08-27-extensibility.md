@@ -170,7 +170,7 @@ element is placed in the depth stack.
 As the [comically large](https://psuter.net/2019/07/07/z-index)
 `z-index` values that one often finds in style sheets illustrate, this
 way of specifying precedence is problematic. A given module, in
-isolation, doesn't know the which precedences other modules are
+isolation, doesn't know which precedences other modules are
 specifying. The options are just points on an undifferentiated numeric
 range. It can provide a huge (or deeply negative) value in the hope of
 hitting one of the far ends of the scale, but everything else requires
