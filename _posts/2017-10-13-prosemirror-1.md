@@ -4,6 +4,7 @@ title: ProseMirror 1.0
 tags:
 - javascript
 - prosemirror
+- architecture
 ---
 
 Two years ago, I started the [ProseMirror

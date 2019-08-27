@@ -4,6 +4,7 @@ title: ProseMirror
 tags:
 - javascript
 - prosemirror
+- architecture
 ---
 
 Sometimes I lie awake at night, feverishly searching for new ways to
