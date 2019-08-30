@@ -26,9 +26,8 @@
 <div id=side>
   <p>Tags:</p>
   <ul class=taglist>
-    <<do var tags = []; Object.keys(site.tags).forEach(function(k) {tags.push({name: k, posts: site.tags[k]});});
-         tags.sort(function(a, b) { return b.posts.length - a.posts.length; }); >>
-    <<for tag tags>>
+    <<for tag Object.keys(site.tags).map(tag => ({name: tag, posts: site.tags[tag]}))
+                .filter(t => t.posts.length > 1).sort((a, b) => b.posts.length - a.posts.length) >>
       <li><span class=tag onclick='filterTag("<<t tag.name>>")'><<t tag.name>></span> (<<t tag.posts.length>>)</li>
     <</for>>
   </ul>
