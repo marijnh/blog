@@ -79,10 +79,10 @@ project was announced...
 
 ### Composition Support
 
-Handling composition/IME (as used by people whose script has too many
-characters to fit on a keyboard, but also pretty much all Android
-virtual keyboard input) in the browser is its own special kind of
-hell.
+Handling composition/IME (input method editor, as used by people whose
+script has too many characters to fit on a keyboard, but also pretty
+much all Android virtual keyboard input) in the browser is its own
+special kind of hell.
 
 During composition, the user interface is in a special mode where a
 piece of the editable text is being _composed_. What exactly that
@@ -156,7 +156,7 @@ widgets in the content) and the attributes of the editor's wrapper DOM
 nodes.
 
 These can be written in bog-standard imperative style, if you want,
-but still make it easy handle editor state changes in a disciplined
+but still make it easy to handle editor state changes in a disciplined
 way—they are notified each time something changes, and provided with a
 full description of the update, including the viewport information and
 the transactions that were applied.
