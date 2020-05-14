@@ -2,14 +2,14 @@
   font-family: 'Sorts Mill Goudy';
   font-style: normal;
   font-weight: 400;
-  src: local('Sorts Mill Goudy Regular'), local('SortsMillGoudy-Regular'), url(http://themes.googleusercontent.com/static/fonts/sortsmillgoudy/v3/JzRrPKdwEnE8F1TDmDLMUkQF8YaxoHnTBii2CPCdpvk.woff) format('woff');
+  src: local('Sorts Mill Goudy Regular'), local('SortsMillGoudy-Regular'), url(https://themes.googleusercontent.com/static/fonts/sortsmillgoudy/v3/JzRrPKdwEnE8F1TDmDLMUkQF8YaxoHnTBii2CPCdpvk.woff) format('woff');
 }
 
 @font-face {
   font-family: 'Ubuntu Mono';
   font-style: normal;
   font-weight: 400;
-  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(http://themes.googleusercontent.com/static/fonts/ubuntumono/v3/ViZhet7Ak-LRXZMXzuAfkYbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(https://themes.googleusercontent.com/static/fonts/ubuntumono/v3/ViZhet7Ak-LRXZMXzuAfkYbN6UDyHWBl620a-IRfuBk.woff) format('woff');
 }
 
 html {
