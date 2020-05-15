@@ -277,7 +277,7 @@ So I moved to a system where you don't deal with individual changes,
 but rather with change _sets_, which represent any number of changes
 in a flat format, as a sequence of untouched and replaced spans. The
 parentheses example above would be represented as “keep 10, insert
-`)`, keep 10, insert `)`”.
+`(`, keep 10, insert `)`”.
 
 (In fact, it'd get another kept span at the end covering the rest of
 the document. This representation knows the length of the document it
