@@ -196,8 +196,9 @@ include some client-specific data to make sure IDs are unique. But on
 the bright side, this approach doesn't require you to keep deleted
 content around.
 
-Given such a data type, collaborative becomes a matter of making sure
-everybody ends up receiving everybody else's changes, eventually.
+Given such a data type, collaborative editing becomes a matter of
+making sure everybody ends up receiving everybody else's changes,
+eventually.
 
 But I guess you can see why this isn't a no-brainer either. Compared
 to OT, where your document representation can just be a minimal
