@@ -266,7 +266,7 @@ second change would be “insert `)` at 21”. You could sometimes get
 around this by creating the changes in inverse order, but that doesn't
 always work either.
 
-Also, when doing things like updating updating the document data
+Also, when doing things like updating the document data
 structure, its representation on the screen, or some auxiliary data
 structure that tracks the document, you need the precise extent of a
 set of changes. This can be _derived_ from a sequence of individual
