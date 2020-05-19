@@ -8,7 +8,7 @@ tags:
 - architecture
 ---
 
-This post describes the considerations considered in designing the
+This post describes the considerations that came up in designing the
 document-change data structure and built-in collaborative editing
 feature in the [upcoming version](https://codemirror.net/6/) of
 CodeMirror (a code editor system). It is something of a followup to
@@ -202,7 +202,7 @@ eventually.
 
 But I guess you can see why this isn't a no-brainer either. Compared
 to OT, where your document representation can just be a minimal
-representation of the text inside it, these techniques requires an
+representation of the text inside it, these techniques require an
 extra data structure to be stored _for every character in the
 document_. And with some of them, you don't get to delete those
 characters either.
