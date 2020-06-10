@@ -1,6 +1,6 @@
 ---
 layout: index
-title: Flows of energy
+title: Marijn Haverbeke's blog
 ---
 
 This is a miscellaneous collection of writings and announcements,
