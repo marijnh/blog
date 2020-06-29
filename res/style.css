@@ -119,7 +119,7 @@ pre {
 
 ul {
   list-style: none;
-  margin-left: 0;
+  margin-left: 1.3rem;
   padding: 0;
 }
 ul li { position: relative }
@@ -127,14 +127,14 @@ ul li:before {
   position: absolute;
   content: "✼";
   display: block;
-  width: 1.5em;
-  left: -1.5em;
+  width: 1.3rem;
+  left: -1.3rem;
   top: .2em;
   font-size: 80%;
 }
 
 ol {
-  padding-left: 0;
+  padding-left: 1.5rem;
 }
 
 /* CodeMirror styling */
