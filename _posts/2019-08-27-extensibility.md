@@ -151,8 +151,8 @@ awkward.
 CodeMirror [version 6](https://github.com/codemirror/codemirror.next)
 is a rewrite of the [code editor](https://codemirror.net) by that
 name, in which I'm trying to take the modular approach further. This
-will requires a more expressive extension system. Let us go over some
-of the challenges involved in the design of such a system.
+requires a more expressive extension system. Let us go over some of
+the challenges involved in the design of such a system.
 
 ## Ordering
 
