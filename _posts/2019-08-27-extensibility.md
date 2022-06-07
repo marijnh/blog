@@ -5,6 +5,10 @@ tags:
 - architecture
 ---
 
+(The details at the bottom of this post no longer reflect the way
+things work in CodeMirror 6. See [this post](facets.html) for an
+updated description.)
+
 It has become fashionable to structure big systems as a number of
 separate packages. The driving idea is that it is better to, instead
 of locking people into your implementation of a feature, provide the
