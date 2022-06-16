@@ -3,7 +3,7 @@ layout: post
 title: "A tale of a pathological scrolling model"
 tags:
 - javascript
-- codemirror
+- codemirror5
 - cm-internals
 ---
 

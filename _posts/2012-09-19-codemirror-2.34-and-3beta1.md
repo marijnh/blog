@@ -2,7 +2,7 @@
 layout: post
 title: CodeMirror 2.34 and 3.0beta1 released
 tags:
-- codemirror
+- codemirror5
 ---
 
 I've just marked the current state of the master branch as version

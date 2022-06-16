@@ -4,7 +4,7 @@ title: JavaScript closure vs. object look-up performance
 tags:
 - javascript
 - performance
-- codemirror
+- codemirror5
 ---
 
 **Note:** the question asked in this post, "why aren't closures

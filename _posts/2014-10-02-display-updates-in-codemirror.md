@@ -5,7 +5,7 @@ tags:
 - javascript
 - cm-internals
 - performance
-- codemirror
+- codemirror5
 ---
 
 This post is part of the [series](./#cm-internals) about the internals

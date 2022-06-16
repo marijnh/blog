@@ -3,7 +3,7 @@ layout: post
 title: CodeMirror's document representation
 tags:
 - javascript
-- codemirror
+- codemirror5
 - cm-internals
 ---
 

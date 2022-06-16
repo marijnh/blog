@@ -3,7 +3,7 @@ layout: post
 title: Faking an editable control in browser JavaScript
 tags:
 - javascript
-- codemirror
+- codemirror5
 - cm-internals
 ---
 

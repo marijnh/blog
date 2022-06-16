@@ -3,7 +3,7 @@ layout: post
 title: Shared documents in CodeMirror
 tags:
 - javascript
-- codemirror
+- codemirror5
 - cm-internals
 ---
 

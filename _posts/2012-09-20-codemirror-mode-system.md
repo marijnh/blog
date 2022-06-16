@@ -3,7 +3,7 @@ layout: post
 title: CodeMirror's mode system
 tags:
 - javascript
-- codemirror
+- codemirror5
 - parsing
 - cm-internals
 ---

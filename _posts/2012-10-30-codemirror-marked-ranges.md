@@ -3,7 +3,7 @@ layout: post
 title: "Overloading plain text: CodeMirror marked ranges"
 tags:
 - javascript
-- codemirror
+- codemirror5
 - cm-internals
 ---
 
