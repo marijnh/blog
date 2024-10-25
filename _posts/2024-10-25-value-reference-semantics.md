@@ -71,7 +71,7 @@ call for reference semantics and situations that call for value
 semantics. A mutable container or a stateful subsystem is best
 implemented with a reference-semantics type. A small composite value
 or a data structure where referential transparency is valuable is much
-better treated a value.
+better treated as a value.
 
 Some languages provide different constructs for these two types of
 records, making it clear what you are dealing with in any given
