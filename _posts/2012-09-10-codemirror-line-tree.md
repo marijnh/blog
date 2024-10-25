@@ -5,6 +5,7 @@ tags:
 - javascript
 - codemirror5
 - cm-internals
+- data structures
 ---
 
 This post is part of an ongoing series of articles that aim to
