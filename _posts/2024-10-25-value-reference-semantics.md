@@ -17,13 +17,17 @@ can be rather sharply divided in two different styles. Some
 programming languages or systems strictly prescribe one or the other,
 but in many cases you can use both.
 
+In such a system, as a user of a data type, you _will_ need to know
+what style of data type you are dealing with, in order to use it
+correctly and effectively.
+
 ## Reference Semantics
 
 Records are implemented as a piece of memory where their content is
 laid out at adjacent memory positions. The way to identify such a
 record value is by its memory address.
 
-Memory can be changed, so records can be changed. You can write new
+Memory can be written to, so records can be changed. You can put new
 values into their fields, and thus the content of a record changes
 over its lifetime.
 
@@ -36,16 +40,17 @@ keys, you hash the memory addresses.
 ## Value Semantics
 
 Mathematical product types allow us to treat a group of values as a
-single value. A two-dimensional coordinate is a pair of numbers.
+single value. For example, a two-dimensional coordinate is a pair of
+numbers.
 
-In implementing computer programs that manipulate such types, we may
-or may not put these numbers in memory somewhere. But that is not
+In implementing computer programs that manipulate such values, we may
+or may not put their content in memory somewhere. But that is not
 terribly relevant to our programming model.
 
 Changing the x position of an existing coordinate pair is not a thing.
-You can create a new record if you need a new pair of coordinates. It
+You can create a new value if you need a new pair of coordinates. It
 is possible to define algebraic rules on records, defining
-equivalences that hold when you perform certain operations on them.
+equivalences that hold on the result of certain operations.
 
 Comparing two records is done by comparing their contents. Whether
 they happen to occupy the same memory is immaterial. A hash table with
@@ -75,13 +80,15 @@ better treated as a value.
 
 Some languages provide different constructs for these two types of
 records, making it clear what you are dealing with in any given
-situation. But many, such as JavaScript, don't. They may not even
-provide reasonable mechanisms for indicating what can be mutated and
-what is immutable. When working with such a crude language it is
-important to be aware of the way a given type is intended to be used.
+situation. But many don't. They may not even provide reasonable
+mechanisms for indicating what can be mutated and what is immutable.
+When working with such a crude language it is important to be aware of
+the way a given type is intended to be used.
 
-All this is to say, when a JavaScript type provides no operations that
-change its content, when the TypeScript types list its fields as
-`readonly`, and the author goes on about it being an immutable type in
-the documentation, please stop mutating its properties and wondering
-why things break.
+Once you know what to look for, it tends to be easy enough to
+recognize the style in which a given data type is intended to be used.
+If its operations are defined in ways that mutate the value, that
+suggests reference semantics. If its fields are marked as read-only
+(assuming the language makes such a thing possible), and operations
+produce new values rather than updating existing objects, you're
+likely expected to think in terms of value semantics.
