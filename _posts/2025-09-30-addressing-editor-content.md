@@ -32,7 +32,7 @@ nearby positions in a flat system is just a matter of addition and
 subtraction, with line-based addresses you have to always special-case
 line boundaries, and know the length of lines to even know where those
 boundaries are. This can be made to work, since several editors,
-including old version of CodeMirror, do it, but moving to flat system
+including old versions of CodeMirror, do it, but moving to flat system
 in CodeMirror 6 was a huge relief.
 
 In many cases, just having a position isn't enough. A cursor at a line
@@ -54,7 +54,7 @@ when you're tracking a lot of positions.
 So, though both of my editor projects use offset positions, I keep
 asking myself whether there is a way around the need to *map* those
 positions on every change. If we could have some way to represent
-document position in a 'stable' way, where you can still use them when
+document position in a ‘stable’ way, where you can still use them when
 you come back to a document, even if that document has changed in a
 bunch of ways since you generated it, that would be so convenient.
 
@@ -71,13 +71,13 @@ just need to look up the element.
 Except, of course, if that element has been deleted. When your ID no
 longer exists in the document, your position has lost its meaning.
 
-One way to handle that is to keep 'tombstones' for deleted elements,
+One way to handle that is to keep ‘tombstones’ for deleted elements,
 either directly in your document data structure, or in a separate data
 structure that maps the IDs of deleted elements to IDs of adjacent
 elements that are still in the document. This does have the downside
 that, for some types of editing patterns, your tombstone data can
 become bigger than your actual document data. It is possible to define
-schemes where you periodically 'garbage collect' these, but then you
+schemes where you periodically garbage collect these, but then you
 reintroduce the issue that you can be invalidating position pointers
 that may still exist in some other data structure, and you are back to
 needing to carefully update such pointers.
@@ -110,10 +110,10 @@ there anymore. Similarly, if you can compare IDs you can run a binary
 or tree search through your document to quickly locate a position.
 
 The obvious downside of this approach is that it is tricky to define
-your IDs in such a way that you can keep making up new IDs that 'fit'
+your IDs in such a way that you can keep making up new IDs that ‘fit’
 between any two existing IDs, and this forces you to use a schema
-where IDs can grow in 'depth' when there's no room left in the
-sequence space on their current level.
+where IDs can grow in size when there's no room left in the sequence
+space on their current level.
 
 It also, and this may be a worse issue, makes the position of deleted
 IDs weirdly dependent on what is inserted in their old place after the
