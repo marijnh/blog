@@ -24,7 +24,7 @@ in data structures that aren't flat arrays, it is not hard to
 efficiently look them up.
 
 Because text editors often store their content split by line in some
-bigger data structure, it is tempting to use {line, character} pairs
+bigger data structure, it is tempting to use `{line, character}` pairs
 for your positions. Though this is often a useful thing to present to
 a user, as an addressing system is is really quite awful. Manipulating
 such positions tends to get convoluted and awkward. Whereas finding
@@ -128,6 +128,26 @@ meaningless position within those inserted elements.
 may notice a lot of similarity between what I'm describing and how
 such systems work. That's because I stole a lot of these ideas from
 CRDT literature.)
+
+## Addendum: Transaction Log
+
+Another approach, suggested to me by [Jamie
+Brandon](https://www.scattered-thoughts.net/) after I published this,
+would be to keep a record of updates with your document, containing
+enough information to map a position forward if you know the document
+version it refers to. Positions would then be `{version, offset}`
+pairs, and you could interpret positions in old versions by running
+through the changes that were made since that version.
+
+In its straightforward form, this would make use of old positions
+increasingly expensive, as they have to be mapped forward ever
+further. But I guess you could get around that by keeping a cache with
+every position.
+
+In any case, this is a neat reframing of the problem. It still
+requires a data structure that grows proportional to editing history
+size, rather than document size, but seems less convoluted than
+ID-based approaches.
 
 ## Conclusion
 
