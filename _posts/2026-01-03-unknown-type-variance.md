@@ -7,7 +7,7 @@ tags:
 - data structures
 ---
 
-Type systems have a tendency to sneaking up on you. You start just
+Type systems have a tendency of sneaking up on you. You start just
 trying to enforce some obvious invariants like “I shouldn't be able
 to assign a string value to a Boolean-typed variable”, and before you
 know what's happened you're reasoning about subtyping relations and
@@ -26,13 +26,13 @@ TypeScript has three funky special types:
    drive a truck through.
 
  - `unknown` indicates a type that we know nothing about. It is a
-   supertype of everything, and a subtype only itself and `any`. This
-   means you can pass anything to a function that takes an `unknown`
-   parameter, but you can't use an `unknown` value in a place where a
-   properly typed value is required. It is a less dangerous way to
-   indicate that we don't know the type of something. Unlike with
-   `any`, you'll actually have to perform some kind of explicit
-   downcast in order to use the untyped value.
+   supertype of everything, and a subtype only of itself and `any`.
+   This means you can pass anything to a function that takes an
+   `unknown` parameter, but you can't use an `unknown` value in a
+   place where a properly typed value is required. It is a less
+   dangerous way to indicate that we don't know the type of something.
+   Unlike with `any`, you'll actually have to perform some kind of
+   explicit downcast in order to use the untyped value.
 
  - Finally `never` is a subtype of everything, but a supertype only of
    itself and `any`. This is most often used to indicate unreachable
