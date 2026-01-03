@@ -3,6 +3,7 @@ layout: post
 title: CodeMirror 6 Status Update
 tags:
 - javascript
+- typescript
 - codemirror
 ---
 

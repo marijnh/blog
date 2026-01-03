@@ -3,6 +3,7 @@ layout: post
 title: CodeMirror 6 Enters Beta
 tags:
 - javascript
+- typescript
 - codemirror
 ---
 

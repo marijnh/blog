@@ -113,7 +113,7 @@ The obvious downside of this approach is that it is tricky to define
 your IDs in such a way that you can keep making up new IDs that ‘fit’
 between any two existing IDs, and this forces you to use a schema
 where IDs can grow in size when there's no room left in the sequence
-space on their current level.
+space on their current level (usually called fractional indexing).
 
 It also, and this may be a worse issue, makes the position of deleted
 IDs weirdly dependent on what is inserted in their old place after the
