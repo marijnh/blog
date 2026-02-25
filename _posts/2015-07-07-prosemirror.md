@@ -127,7 +127,7 @@ model you want to use in a given editor instance.
 
 ## Interface
 
-The editor currently comes with a two styles of user interface. One is
+The editor currently comes with two styles of user interface. One is
 the classical toolbar at the top. The other shows tooltips above your
 selection to do inline-level styling, and a menu button to the right
 of the currently selected paragraph for block-level actions. I rather
